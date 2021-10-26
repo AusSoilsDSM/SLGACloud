@@ -33,7 +33,7 @@ slgaNames <- function(product='CLY'){
       stop(paste0("Only valid product codes are ", vals))
     }
     adf <- read.csv(paste0( 'https://esoil.io/TERNLandscapes/Public/Products/TERN/SLGA/', product, '/files.txt'), header = F)
-    adf2 <- str_remove(adf[,1], '.tif')
+    adf2 <- stringr::str_remove(adf[,1], '.tif')
   }
   return(adf2)
 }
@@ -62,7 +62,7 @@ slgaCOGsURLs <- function(product = NULL, layername=NULL){
       stop(paste0("Only valid product codes are ", vals))
     }
     adf <- read.csv(paste0( 'https://esoil.io/TERNLandscapes/Public/Products/TERN/SLGA/', product, '/files.txt'), header = F)
-    adf2 <- str_remove(adf[,1], '.tif')
+    adf2 <- stringr::str_remove(adf[,1], '.tif')
 
   urls <- paste0(storeRoot, '/SLGA/',product, '/', adf2, '.tif')
   odf <- data.frame(name=adf2, url=urls)
