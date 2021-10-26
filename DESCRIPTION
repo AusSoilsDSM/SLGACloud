@@ -1,11 +1,14 @@
 Package: SLGACloud
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Utilities for Accessing SLGA Cloud Optimised Geotiffs
+Version: 1.0.0
+Author: Ross Searle
+Maintainer: Ross Searle <ross.searle@csiro.au>
+Description: Utilities to help ease the access to the Soil and Landscape Grid of Australia (SLGA) Cloud Optimised Geofiff (COG) data store.    This is really just a proof of concept at this stage. Information about the SLGA can be found at https://www.clw.csiro.au/aclep/soilandlandscapegrid/index.html
+License: GPL
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.1.1
+Imports:
+	httr,
+	utils
