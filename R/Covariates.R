@@ -3,6 +3,7 @@
 #
 #' Return the metadata information for the raster covariate stack
 #'
+#' @description Return the metadata information for the raster covariate stack. Metadat for either 30m or 90m or both laots of covariates is returned
 #' @param product Filter on the covariate stack for a particular product stack. Options are 30mCovariates or 90mCovariates
 #' @return dataframe
 #' @examples
@@ -88,7 +89,7 @@ covariateCOGsURLs <- function(product = NULL, layername=NULL){
   }
 
 
-  urls <- paste0(storeRoot, '/Covariates/Mosaics/', res, '/', df$CoVariateName, '.tif')
+  urls <- paste0(storeRoot, '/Covariates/Mosaics/', res, 'm/', df$CoVariateName, '.tif')
   odf <- data.frame(name=df$CoVariateName, url=urls)
 
   if(!is.null(layername)){

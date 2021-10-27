@@ -2,13 +2,37 @@
 % Please edit documentation in R/examples.R
 \name{codeDemo}
 \alias{codeDemo}
-\title{Run through a quick demonstration of the functions}
+\title{Run through a quick demonstration of the SLGACloud functions}
 \usage{
 codeDemo()
 }
 \description{
-Run through a quick demonstration of the functions
+Run through a quick demonstration of the SLGACloud functions for accessing the TERN Landscapes COGs Datastore URLs
 }
 \examples{
 codeDemo()
+#'
+### Datastore general
+pingDataStore()
+COGSDataStoreURLs()
+
+### Covariates
+covariateMetaData(product = '90mCovariates')
+covariateNames(product = '90mCovariates')
+covariateCOGsURLs(product = '90mCovariates', layername = 'Veg_Landsat8Bare2')
+covariateCOGsURLs(product = '30mCovariates', layername = NULL)
+
+### Websites
+openCogsWebsites()
+openCogsWebsites('90mCovariates', type='Raw')
+openCogsWebsites('90mCovariates', type='Formatted')
+
+### SLGA
+SLGACodes()
+SLGANames(product='CLY')
+slgaCOGsURLs(product = 'AWC', layername=NULL)
+slgaCOGsURLs(product = 'AWC', layername='AWC_030_060_05_N_P_AU_NAT_C_20140801')
+
+####  COGs Utils
+downloadcog(url='https://esoil.io/TERNLandscapes/Public/Products/TERN/Covariates/Mosaics/90m/Veg_Landsat8Bare2.tif', dest='c:/temp/demoCOG.tif')
 }

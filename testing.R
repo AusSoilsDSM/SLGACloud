@@ -24,3 +24,7 @@ SLGACodes()
 SLGANames(product='CLY')
 slgaCOGsURLs(product = 'AWC', layername=NULL)
 slgaCOGsURLs(product = 'AWC', layername='AWC_030_060_05_N_P_AU_NAT_C_20140801')
+
+
+####  COGs Utils
+downloadcog(url='https://esoil.io/TERNLandscapes/Public/Products/TERN/Covariates/Mosaics/90m/Veg_Landsat8Bare2.tif', dest='c:/temp/demoCOG.tif')

@@ -2,9 +2,12 @@
 
 export(COGSDataStoreURLs)
 export(codeDemo)
+export(codeDemoCOGs)
 export(covariateCOGsURLs)
 export(covariateMetaData)
 export(covariateNames)
+export(downloadcog)
+export(loadcog)
 export(openCogsWebsites)
 export(pingDataStore)
 export(slgaCOGsURLs)

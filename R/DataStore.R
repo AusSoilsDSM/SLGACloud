@@ -15,7 +15,7 @@ pingDataStore <- function() {
  if(r$status_code == 200){
     return(paste0('Hooray!!!! The COGs datastore is alive at - ', storeRoot))
  }else{
-    return(paste0('Oops!!!! The is a problem talking to the data store at - ', storeRoot))
+    return(paste0('Oops!!!! There is a problem talking to the data store at - ', storeRoot))
  }
 
 }
