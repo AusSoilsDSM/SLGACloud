@@ -1,5 +1,5 @@
 # SLGACloud
 
 
-library(devtools)
+library(devtools)  
 install_github("AusSoilsDSM/SLGACloud")
