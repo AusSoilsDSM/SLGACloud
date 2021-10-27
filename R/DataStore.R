@@ -8,7 +8,7 @@
 #' @export
 
 
-PingDataStore <- function() {
+pingDataStore <- function() {
 
  r <- httr::GET(paste0(storeRoot))
 
