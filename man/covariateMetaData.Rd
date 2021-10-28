@@ -13,7 +13,7 @@ covariateMetaData(product = NULL)
 dataframe
 }
 \description{
-Return the metadata information for the raster covariate stack. Metadat for either 30m or 90m or both laots of covariates is returned
+Return the metadata information for the raster covariate stack. Metadata for either 30m or 90m or both laots of covariates is returned
 }
 \examples{
 covariateMetaData()

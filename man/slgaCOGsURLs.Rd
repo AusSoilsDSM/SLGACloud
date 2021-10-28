@@ -2,21 +2,22 @@
 % Please edit documentation in R/SLGACOGs.R
 \name{slgaCOGsURLs}
 \alias{slgaCOGsURLs}
-\title{Returns a dataframe of available SLGA rasters and their COGs URLs}
+\title{List available SLGA rasters and their COGs URLs}
 \usage{
 slgaCOGsURLs(product = NULL, layername = NULL)
 }
 \arguments{
 \item{product}{The product to return names for. Options are "AWC", "BDW", "CLY", "DER", "DES", "ECE", "NTO", "pHc", "PTO", "SLT", "SND", "SOC")}
 
-\item{layername}{Filter on a specific layer name.
-#' @examples
-slgaCOGsURLs(product = 'AWC', layername=NULL)
-slgaCOGsURLs(product = 'AWC', layername='AWC_030_060_05_N_P_AU_NAT_C_20140801')}
+\item{layername}{Filter on a specific layer name.}
 }
 \value{
 dataframe
 }
 \description{
 Returns a dataframe of available SLGA rasters and their COGs URLs
+}
+\examples{
+slgaCOGsURLs(product = 'AWC', layername=NULL)
+slgaCOGsURLs(product = 'AWC', layername='AWC_030_060_05_N_P_AU_NAT_C_20140801')
 }

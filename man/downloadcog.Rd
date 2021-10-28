@@ -2,7 +2,7 @@
 % Please edit documentation in R/COGsUtils.R
 \name{downloadcog}
 \alias{downloadcog}
-\title{Download an entire COG Geotiff file to your local machine}
+\title{Download a COG file}
 \usage{
 downloadcog(url = NULL, dest = "")
 }

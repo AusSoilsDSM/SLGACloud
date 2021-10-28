@@ -2,7 +2,7 @@
 % Please edit documentation in R/SLGACOGs.R
 \name{slgaNames}
 \alias{slgaNames}
-\title{Returns a list of available SLGA raster names}
+\title{List of available SLGA raster names}
 \usage{
 slgaNames(product = "CLY")
 }

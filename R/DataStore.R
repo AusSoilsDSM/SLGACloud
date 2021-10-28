@@ -1,9 +1,9 @@
 
 # PingData
 #
-#' Check that the SLGA Data Store is available
+#' Check that the SLGA Data Store is available.
 #'
-#' This function hits the SLGA Data Store to check that it is available
+#' @description  This function hits the SLGA Data Store to check that it is available.
 #' @return string
 #' @export
 
@@ -23,9 +23,8 @@ pingDataStore <- function() {
 
 # showCOGsDataStoreURL
 #
-#' List relevant URLs for the TERN Landscapes COGs Data Store
-#'
-#' A table  of URLs
+#' URLs for the TERN Landscapes COGs Data Store
+#' @description  List relevant URLs for the TERN Landscapes COGs Data Store
 #' @return dataframe
 #' @export
 COGSDataStoreURLs <- function() {

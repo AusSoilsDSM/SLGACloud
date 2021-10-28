@@ -1,22 +1,20 @@
 # SLGACodes
 #
-#' Returns a list of available SLGA product codes
+#' List available SLGA product codes
 #'
-#' @param product Returns a list of available SLGA product codes with it plain English description
+#' @description Returns a list of available SLGA product codes with it plain English description
 #' @examples
 #' SLGACodes()
 #' @return dataframe
 #' @export
-
-
 slgaCodes <- function(){
     return(SLGAAttributes)
 }
 
 # SLGANames
 #
-#' Returns a list of available SLGA raster names
-#'
+#' List of available SLGA raster names
+#' @description Returns a list of available SLGA raster names
 #' @param product The product to return names for. Options are "AWC", "BDW", "CLY", "DER", "DES", "ECE", "NTO", "pHc", "PTO", "SLT", "SND", "SOC")
 #' @return list
 #' @examples
@@ -42,11 +40,12 @@ slgaNames <- function(product='CLY'){
 
 # slgaCOGsURLs
 #
-#' Returns a dataframe of available SLGA rasters and their COGs URLs
+#' List available SLGA rasters and their COGs URLs
+#' @description Returns a dataframe of available SLGA rasters and their COGs URLs
 #'
 #' @param product The product to return names for. Options are "AWC", "BDW", "CLY", "DER", "DES", "ECE", "NTO", "pHc", "PTO", "SLT", "SND", "SOC")
 #' @param layername Filter on a specific layer name.
-#' #' @examples
+#' @examples
 #' slgaCOGsURLs(product = 'AWC', layername=NULL)
 #' slgaCOGsURLs(product = 'AWC', layername='AWC_030_060_05_N_P_AU_NAT_C_20140801')
 #' @return dataframe

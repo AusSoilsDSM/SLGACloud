@@ -1,7 +1,7 @@
 # loadcog
 #
 #' Load a raster dataset from a COG URL
-#'
+#' @description Uses the 'terra' rast() function and prepends the '/vsicurl/' bit to save you doing it manually
 #' @param url Web location of the Cloud Optimised Geotiff
 #' @return SpatRaster
 #' @examples
@@ -17,8 +17,8 @@ loadcog <- function(url=NULL){
 
 # downloadcog
 #
-#' Download an entire COG Geotiff file to your local machine
-#'
+#' Download a COG file
+#' @description Download an entire COG Geotiff file to your local machine
 #' @param url Web location of the Cloud Optimised Geotiff
 #' @param dest Download file location
 #' @return file

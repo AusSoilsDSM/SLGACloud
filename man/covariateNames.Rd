@@ -2,7 +2,7 @@
 % Please edit documentation in R/Covariates.R
 \name{covariateNames}
 \alias{covariateNames}
-\title{Returns a list of available covariate raster names}
+\title{List of covariate raster names}
 \usage{
 covariateNames(product = "90mCovariates")
 }

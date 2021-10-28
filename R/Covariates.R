@@ -3,7 +3,7 @@
 #
 #' Return the metadata information for the raster covariate stack
 #'
-#' @description Return the metadata information for the raster covariate stack. Metadat for either 30m or 90m or both laots of covariates is returned
+#' @description Return the metadata information for the raster covariate stack. Metadata for either 30m or 90m or both laots of covariates is returned
 #' @param product Filter on the covariate stack for a particular product stack. Options are 30mCovariates or 90mCovariates
 #' @return dataframe
 #' @examples
@@ -32,7 +32,9 @@ covariateMetaData <- function(product=NULL){
 
 # covariateNames
 #
-#' Returns a list of available covariate raster names
+#' List of covariate raster names
+#'
+#' @description Returns a list of available covariate raster names
 #'
 #' @param product The product to return names for. Options are '90mCovariates' & '30mCovariates'
 #' @examples
@@ -60,8 +62,8 @@ covariateNames <- function(product='90mCovariates'){
 
 # getCovariateURLs
 #
-#' Returns a dataframe of available covariate rasters and their COGs URLs
-#'
+#' Get covariate rasters COGs URLs
+#' @description Returns a dataframe of available covariate rasters and their COGs URLs
 #' @param product The product to return names for. Options are '90mCovariates' & '30mCovariates'
 #' @param layername Filter on a specific layer name.
 #' @examples

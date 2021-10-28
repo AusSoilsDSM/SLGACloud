@@ -10,7 +10,6 @@ codeDemo()
 Run through a quick demonstration of the SLGACloud functions for accessing the TERN Landscapes COGs Datastore URLs
 }
 \examples{
-codeDemo()
 #'
 ### Datastore general
 pingDataStore()

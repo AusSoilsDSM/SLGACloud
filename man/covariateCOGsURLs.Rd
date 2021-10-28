@@ -2,7 +2,7 @@
 % Please edit documentation in R/Covariates.R
 \name{covariateCOGsURLs}
 \alias{covariateCOGsURLs}
-\title{Returns a dataframe of available covariate rasters and their COGs URLs}
+\title{Get covariate rasters COGs URLs}
 \usage{
 covariateCOGsURLs(product = NULL, layername = NULL)
 }

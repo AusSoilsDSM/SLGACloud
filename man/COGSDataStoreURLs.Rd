@@ -2,7 +2,7 @@
 % Please edit documentation in R/DataStore.R
 \name{COGSDataStoreURLs}
 \alias{COGSDataStoreURLs}
-\title{List relevant URLs for the TERN Landscapes COGs Data Store}
+\title{URLs for the TERN Landscapes COGs Data Store}
 \usage{
 COGSDataStoreURLs()
 }
@@ -10,5 +10,5 @@ COGSDataStoreURLs()
 dataframe
 }
 \description{
-A table  of URLs
+List relevant URLs for the TERN Landscapes COGs Data Store
 }

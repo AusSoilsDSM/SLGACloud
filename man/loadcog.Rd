@@ -13,7 +13,7 @@ loadcog(url = NULL)
 SpatRaster
 }
 \description{
-Load a raster dataset from a COG URL
+Uses the 'terra' rast() function and prepends the '/vsicurl/' bit to save you doing it manually
 }
 \examples{
 loadcog('https://esoil.io/TERNLandscapes/Public/Products/TERN/Covariates/Mosaics/90/Veg_Landsat8Bare2.tif')

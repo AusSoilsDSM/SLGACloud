@@ -2,7 +2,7 @@
 % Please edit documentation in R/DataStore.R
 \name{pingDataStore}
 \alias{pingDataStore}
-\title{Check that the SLGA Data Store is available}
+\title{Check that the SLGA Data Store is available.}
 \usage{
 pingDataStore()
 }
@@ -10,5 +10,5 @@ pingDataStore()
 string
 }
 \description{
-This function hits the SLGA Data Store to check that it is available
+This function hits the SLGA Data Store to check that it is available.
 }

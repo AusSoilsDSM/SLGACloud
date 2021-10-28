@@ -10,7 +10,6 @@ codeDemoCOGs()
 Run through a quick demonstration of using COGS in R with the "terra" package.
 }
 \examples{
-codeDemoCOGs()
 
 library(terra)
 

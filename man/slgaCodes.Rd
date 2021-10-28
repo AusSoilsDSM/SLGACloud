@@ -2,18 +2,15 @@
 % Please edit documentation in R/SLGACOGs.R
 \name{slgaCodes}
 \alias{slgaCodes}
-\title{Returns a list of available SLGA product codes}
+\title{List available SLGA product codes}
 \usage{
 slgaCodes()
-}
-\arguments{
-\item{product}{Returns a list of available SLGA product codes with it plain English description}
 }
 \value{
 dataframe
 }
 \description{
-Returns a list of available SLGA product codes
+Returns a list of available SLGA product codes with it plain English description
 }
 \examples{
 SLGACodes()
