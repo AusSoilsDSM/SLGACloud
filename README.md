@@ -11,3 +11,7 @@ To install the package in R
   
 library(devtools)  
 install_github("AusSoilsDSM/SLGACloud")
+
+when it is installed you can take a quick preview of the functionality using
+codeDemo()
+codeDemoCOGs()
