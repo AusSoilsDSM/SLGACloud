@@ -1,41 +1,57 @@
 
-# openCogsWebsites
-#
-#' Open the various web pages in the TERN Landscapes COGs Data Store
-#' @param product Which website to open. Options are 'SLGA', 'COGsMainPage', '90mCovariates', '30mCovariates'
-#' @param type Go to the nicely formatted web page or the raw http file listing. Options are 'Formatted' & 'Raw'
+# SLGAsWebsites
+#' SLGAs Websites
+#' @description Locations of the various web sites relevant to the Soil and Landscape Grid of Australia.
+#' @param WebSiteName If a name is supplied the URL will be opened in your browser.
+#' @details If no WebSiteName value is supplied, a list of urls will be returned. If a  WebSiteName parameter value is supplied the website will be opened in your browser
 
+#' @author Ross Searle
+#' @return dataframe
+#'
 #' @examples
-#' openCogsWebsites('COGsMainPage')
-#' openCogsWebsites('90mCovariates', type='Formatted')
-#' openCogsWebsites('30mCovariates', type='Raw')
-#' openCogsWebsites('SLGA')
+#' SLGAWebsites()
+#' SLGAWebsites('TERN Landscapes COGs Datastore Main Page')
 #' @export
-openCogsWebsites <- function(product='COGsMainPage', type='Formatted'){
+SLGAWebsites <- function(WebSiteName=NULL){
 
-  if(product=='SLGA'){
-    browseURL(paste0(slgaWebPath))
-  }else if(product=='COGsMainPage'){
-    browseURL(paste0(webRoot, '/Pages/COGs/index.html'))
-  }
-  else if(product=='90mCovariates'){
 
-    if(type=='Formatted'){
-      browseURL(paste0(webRoot, '/Pages/COGs/90m_Covariates.html'))
-    }else{
-      browseURL(paste0(webRoot, '/Products/TERN/Covariates/Mosaics/90m/'))
-    }
 
-  }else if(product=='30mCovariates'){
+  Website <- c('Soil and Landscape Grid of Australia', 'TERN Landscapes COGs Datastore Main Page', 'SLGA Soil Attributes  Data Store',
+               '90m Covariates Data Store', '30m Covariates Data Store', '90m PCA Covariates Data Store', '30m PCA Covariates Data Store',
+               'SLGA Soil Attribute Metadata', 'Covariate Metadata', 'SLGA Methodolgy Info'
+               )
 
-    if(type=='Formatted'){
-      browseURL(paste0(webRoot, '/Pages/COGs/30m_Covariates.html'))
-    }else{
-      browseURL(paste0(webRoot, '/Products/TERN/Covariates/Mosaics/30m/'))
-    }
 
+  FormattedURL <- c(paste0(slgaWebPath, '/index.html'),
+                    paste0(slgaWebPath, '/GetData-COGSDataStore.html'),
+                    paste0(slgaWebPath, '/GetData-COGSDataStore_SLGA.html'),
+                    paste0(slgaWebPath, '/GetData-COGSDataStore_90m_Covariates.html'),
+                    paste0(slgaWebPath, '/GetData-COGSDataStore_30m_Covariates.html'),
+                    paste0(slgaWebPath, '/GetData-COGSDataStore_90m_PCA_Covariates.html'),
+                    paste0(slgaWebPath, '/GetData-COGSDataStore_30m_PCA_Covariates.html'),
+                    paste0('https://data.csiro.au/search/keyword?q=tern_soil'),
+
+                    paste0('https://shiny.esoil.io/Apps/Covariates/'),
+                    paste0('https://aussoilsdsm.esoil.io/slga-version-2-products')
+                    )
+
+                # RawURL <- c( paste0(slgaWebPath, '/GetData-COGSDataStore.html'),
+               # paste0('https://esoil.io/TERNLandscapes/Public/Products/TERN/Covariates/Mosaics/90m/'),
+               # paste0('https://esoil.io/TERNLandscapes/Public/Products/TERN/Covariates/Mosaics/30m/'),
+               # paste0('https://esoil.io/TERNLandscapes/Public/Products/TERN/Covariates/Mosaics/90m_PCA/'),
+               # paste0('https://esoil.io/TERNLandscapes/Public/Products/TERN/Covariates/Mosaics/930m_PCA/'))
+
+ # odf <- data.frame(Website=Website, FormattedURL=FormattedURL, RawURL=RawURL)
+    odf <- data.frame(Website=Website, FormattedURL=FormattedURL)
+
+  if(is.null(WebSiteName)){
+    return(odf)
+  }else{
+    url <- odf[odf$Website==WebSiteName,]$FormattedURL
+    utils::browseURL(url)
   }
 
 
 }
+
 

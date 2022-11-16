@@ -1,30 +1,33 @@
-# devtools::document()
+
+
+# getProductMetaData(Detail = 'Low', Product='SLGA')
 #
+# getParameterValues(Parameter = 'Product')
+#
+#
+#
+#print(getParameterValues(Parameter = "Attribute"), n=100)
+# print(t, n=100)
+#
+#
+# getProductMetaData(Detail = 'High', Product='SLGA', Attribute='Available Water Capacity')
+#cogs <- getProductMetaData(Detail = 'Low', Product='SLGA', Attribute='Clay', Component = 'Modelled-Value')
+#
+# COGSDataStoreURLs()
+#
+#
+# SLGACloud::COGSDataStoreURLs()
 
 
-library(SLGACloud)
 
-### Datastore general
-pingDataStore()
-COGSDataStoreURLs()
-
-### Covariates
-covariateMetaData(product = '90mCovariates')
-covariateNames(product = '90mCovariates')
-covariateCOGsURLs(product = '90mCovariates', layername = 'Veg_Landsat8Bare2')
-covariateCOGsURLs(product = '30mCovariates', layername = NULL)
-
-### Websites
-openCogsWebsites()
-openCogsWebsites('90mCovariates', type='Raw')
-openCogsWebsites('90mCovariates', type='Formatted')
-
-### SLGA
-SLGACodes()
-SLGANames(product='CLY')
-slgaCOGsURLs(product = 'AWC', layername=NULL)
-slgaCOGsURLs(product = 'AWC', layername='AWC_030_060_05_N_P_AU_NAT_C_20140801')
+# cogDownload(url = cogs$COGsPath[1], dest='c:/temp/demoCOG.tif')
+#
+# prods <- getProductMetaData(Detail = 'Low',  Attribute='Parent_Material', Resolution = '90m')
+# drillRasters(Products = prods[1:3,], Longitude = 151, Latitude = -26, Verbose = F)
+#
+#
+# cogPreview(urls = cogs$COGsPath[1:6])
 
 
-####  COGs Utils
-downloadcog(url='https://esoil.io/TERNLandscapes/Public/Products/TERN/Covariates/Mosaics/90m/Veg_Landsat8Bare2.tif', dest='c:/temp/demoCOG.tif')
+ SLGAWebsites()
+# SLGAWebsites('TERN Landscapes COGs Datastore Main Page')

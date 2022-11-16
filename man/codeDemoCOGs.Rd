@@ -2,29 +2,13 @@
 % Please edit documentation in R/examples.R
 \name{codeDemoCOGs}
 \alias{codeDemoCOGs}
-\title{Run through a quick demonstration of using COGS in R.}
+\title{COGS code demonstration.}
 \usage{
 codeDemoCOGs()
 }
 \description{
 Run through a quick demonstration of using COGS in R with the "terra" package.
 }
-\examples{
-
-library(terra)
-
-r <- rast('/vsicurl/https://esoil.io/TERNLandscapes/Public/Products/TERN/Covariates/Mosaics/30m/Other_A_MOD_DAY_4dim_3ord_Spatial_Temporal_mean.tif')
-plot(r)
-
-##### Clip out a section  #######
-e <- ext(145, 146, -25,-24)
-rc <- crop(r, e)
-plot(rc)
-
-#### drill pixels  ########
-rl <- c('/vsicurl/https://esoil.io/TERNLandscapes/Public/Products/TERN/SLGA/CLY/CLY_100_200_EV_N_P_AU_NAT_C_20140801.tif', '/vsicurl/https://esoil.io/TERNLandscapes/Public/Products/TERN/SLGA/CLY/CLY_005_015_EV_N_P_AU_NAT_C_20140801.tif')
-
-stk <- rast(rl)
-pts <- as.matrix(data.frame(x=c(140, 143), y=c(-25, -30)))
-extract(stk, pts)
+\author{
+Ross Searle
 }
