@@ -14,10 +14,8 @@
 #' @export
 
 getParameterValues <- function(Parameter='Name'){
-
-  res <- jsonlite::fromJSON(paste0('https://esoil.io/TERNLandscapes/RasterProductsAPI/QueryParameterValues?format=json&parameter=',Parameter))
+  res <- jsonlite::fromJSON(utils::URLencode(paste0('https://esoil.io/TERNLandscapes/RasterProductsAPI/QueryParameterValues?format=json&parameter=',Parameter)))
   return(res)
-
 }
 
 
@@ -53,10 +51,9 @@ getProductMetaData <- function(Detail='High', Product=NULL, DataType=NULL, Sourc
   if(!is.null(Component)){p <- paste0(p, '&component=',Component)}
   if(!is.null(Name)){p <- paste0(p, '&name=',Name)}
   if(!is.null(Resolution)){p <- paste0(p, '&resolution=',Resolution)}
-
-
-
-  res <- jsonlite::fromJSON(paste0('https://esoil.io/TERNLandscapes/RasterProductsAPI/ProductInfo?format=json', p))
+  url <- utils::URLencode(paste0('https://esoil.io/TERNLandscapes/RasterProductsAPI/ProductInfo?format=json', p))
+  print(url)
+  res <- jsonlite::fromJSON(url)
 
   if(Detail=='Low'){
    odf <- data.frame(Name= res$Name, COGsPath=res$COGsPath)

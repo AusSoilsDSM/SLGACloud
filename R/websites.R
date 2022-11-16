@@ -48,7 +48,7 @@ SLGAWebsites <- function(WebSiteName=NULL){
     return(odf)
   }else{
     url <- odf[odf$Website==WebSiteName,]$FormattedURL
-    utils::browseURL(url)
+    utils::browseURL(utils::URLencode(url))
   }
 
 
