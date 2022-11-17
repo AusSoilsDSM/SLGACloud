@@ -10,7 +10,7 @@
 # print(t, n=100)
 #
 #
-# getProductMetaData(Detail = 'High', Product='SLGA', Attribute='Available Water Capacity')
+#d <- getProductMetaData(Detail = 'High', Product='SLGA', Attribute='Available Water Capacity')
 #cogs <- getProductMetaData(Detail = 'Low', Product='SLGA', Attribute='Clay', Component = 'Modelled-Value')
 #
 # COGSDataStoreURLs()

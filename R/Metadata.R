@@ -52,7 +52,7 @@ getProductMetaData <- function(Detail='High', Product=NULL, DataType=NULL, Sourc
   if(!is.null(Name)){p <- paste0(p, '&name=',Name)}
   if(!is.null(Resolution)){p <- paste0(p, '&resolution=',Resolution)}
   url <- utils::URLencode(paste0('https://esoil.io/TERNLandscapes/RasterProductsAPI/ProductInfo?format=json', p))
-  print(url)
+
   res <- jsonlite::fromJSON(url)
 
   if(Detail=='Low'){
