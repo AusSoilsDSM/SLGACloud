@@ -22,6 +22,7 @@ cogLoad <- function(url=NULL){
 #' @description Download an entire COG Geotiff file to your local machine
 #' @param url Web location of the Cloud Optimised Geotiff
 #' @param dest Download file location
+#' @param quiet Show file download progress bar if TRUE
 #' @return Cloud Optimised Geotiff
 #' @author Ross Searle
 #' @examples
@@ -29,8 +30,7 @@ cogLoad <- function(url=NULL){
 #' @export
 
 cogDownload <- function(url=NULL, dest='', quiet = FALSE){
-
-  r <- utils::download.file(paste0(utils::URLencode(url)), destfile=dest, mode='wb', quiet = quiet )
+  r <- utils::download.file(utils::URLencode(paste0(url)), destfile=dest, mode='wb', quiet = quiet )
   return(r)
 }
 

@@ -117,11 +117,11 @@ rsp2 <- rsp[1:5,]
 
    cat(crayon::green('\n\nor we could do the same thing using the drillRasters() function in this package\n'))
    cat(crayon::green("\n\nprods <- getProductMetaData(Detail = 'Low',  Attribute='Parent_Material', Resolution = '90m') \n"))
-   cat(crayon::green("drillRasters(Products = prods[1:3,], Longitude = 151, Latitude = -26, Verbose = F) \n"))
+   cat(crayon::green("drillRasters(Products = prods[1:3,], Longitude = 151, Latitude = -26, Verbose = FALSE) \n"))
 
    invisible(readline(prompt="Press [enter] to extract pixel values using the drillRasters() function"))
    prods <- getProductMetaData(Detail = 'Low',  Attribute='Parent_Material', Resolution = '90m')
-   vals <- drillRasters(Products = prods[1:3,], Longitude = 151, Latitude = -26, Verbose = F)
+   vals <- drillRasters(Products = prods[1:3,], Longitude = 151, Latitude = -26, Verbose = FALSE)
    print(vals)
 
    cat(crayon::green('\n\nOK.... Thats it. Enjoy using your COGs '))
