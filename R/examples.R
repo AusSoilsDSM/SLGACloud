@@ -37,7 +37,7 @@ print(tibble::as_tibble(getProductMetaData(Detail = 'High', Product='SLGA', Attr
 
 
 cat(crayon::green('\n\n\nAnd finally to find out locations of relevant SLGA websites -  SLGAWebsites()\n\n'))
-invisible(readline(prompt="Press [enter] to list the webiste URLs"))
+invisible(readline(prompt="Press [enter] to list the website URLs"))
 print(SLGAWebsites())
 
 cat(crayon::green('\n\nHere endeth the lesson.....\n\nBut we do recommend you have a look at codeDemoCOGs() to see how to use these uRLs in the "terra" package\n '))
@@ -78,7 +78,7 @@ codeDemoCOGs <- function(){
 rsp2 <- rsp[1:5,]
   print(rsp2)
 
-  cat(crayon::green('\n\nNow lets load the raster data (5.3Gb) set using - loadcog("https://esoil.io/TERNLandscapes/Public/Products/TERN/Covariates/Mosaics/90m/Veg_Landsat8Bare2.tif")\n\n'))
+  cat(crayon::green('\n\nNow lets load the raster data (5.3Gb) set using - cogLoad("https://esoil.io/TERNLandscapes/Public/Products/TERN/Covariates/Mosaics/90m/Veg_Landsat8Bare2.tif")\n\n'))
   invisible(readline(prompt="Press [enter] to load the raster data"))
   r <- cogLoad('https://esoil.io/TERNLandscapes/Public/Products/TERN/Covariates/Mosaics/90m/Veg_Landsat8Bare2.tif')
   print(r)
@@ -112,16 +112,17 @@ rsp2 <- rsp[1:5,]
 
    stk <- terra::rast(rl)
    pts <- as.matrix(data.frame(x=c(140, 143), y=c(-25, -30)))
-   terra::extract(stk, pts)
+   vals <- terra::extract(stk, pts)
+   print(vals)
 
    cat(crayon::green('\n\nor we could do the same thing using the drillRasters() function in this package\n'))
    cat(crayon::green("\n\nprods <- getProductMetaData(Detail = 'Low',  Attribute='Parent_Material', Resolution = '90m') \n"))
-   cat(crayon::green("\n\ndrillRasters(Products = prods[1:3,], Longitude = 151, Latitude = -26, Verbose = F) \n"))
+   cat(crayon::green("drillRasters(Products = prods[1:3,], Longitude = 151, Latitude = -26, Verbose = F) \n"))
 
    invisible(readline(prompt="Press [enter] to extract pixel values using the drillRasters() function"))
    prods <- getProductMetaData(Detail = 'Low',  Attribute='Parent_Material', Resolution = '90m')
-   drillRasters(Products = prods[1:3,], Longitude = 151, Latitude = -26, Verbose = F)
-
+   vals <- drillRasters(Products = prods[1:3,], Longitude = 151, Latitude = -26, Verbose = F)
+   print(vals)
 
    cat(crayon::green('\n\nOK.... Thats it. Enjoy using your COGs '))
 
