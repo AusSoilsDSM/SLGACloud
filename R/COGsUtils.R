@@ -30,7 +30,7 @@ cogLoad <- function(url=NULL){
 
 cogDownload <- function(url=NULL, dest='', quiet = FALSE){
 
-  r <- utils::download.file(paste0(url), destfile=dest, mode='wb', quiet = quiet )
+  r <- utils::download.file(paste0(utils::URLencode(url)), destfile=dest, mode='wb', quiet = quiet )
   return(r)
 }
 
