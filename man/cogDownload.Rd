@@ -10,6 +10,8 @@ cogDownload(url = NULL, dest = "", quiet = FALSE)
 \item{url}{Web location of the Cloud Optimised Geotiff}
 
 \item{dest}{Download file location}
+
+\item{quiet}{Show file download progress bar if TRUE}
 }
 \value{
 Cloud Optimised Geotiff

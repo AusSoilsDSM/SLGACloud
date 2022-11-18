@@ -22,12 +22,12 @@
 
 # cogDownload(url = cogs$COGsPath[1], dest='c:/temp/demoCOG.tif')
 #
-# prods <- getProductMetaData(Detail = 'Low',  Attribute='Parent_Material', Resolution = '90m')
+# prods <- getProductMetaData(Detail = 'High',  Attribute='Parent_Material', Resolution = '90m')
 # drillRasters(Products = prods[1:3,], Longitude = 151, Latitude = -26, Verbose = F)
 #
 #
 # cogPreview(urls = cogs$COGsPath[1:6])
 
 
- SLGAWebsites()
+# SLGAWebsites()
 # SLGAWebsites('TERN Landscapes COGs Datastore Main Page')

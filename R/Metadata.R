@@ -56,9 +56,9 @@ getProductMetaData <- function(Detail='High', Product=NULL, DataType=NULL, Sourc
   res <- jsonlite::fromJSON(url)
 
   if(Detail=='Low'){
-   odf <- data.frame(Name= res$Name, COGsPath=res$COGsPath)
+   odf <- data.frame(Name= res$Name, COGsPath=res$COGsPath,  StagingPath=res$StagingPath)
   }else if(Detail=='Moderate'){
-    odf <- data.frame(Name= res$Name, COGsPath=res$COGsPath, UpperDepth_m= res$UpperDepth_m, LowerDepth_m=res$LowerDepth_m, Units=res$Units)
+    odf <- data.frame(Name= res$Name, COGsPath=res$COGsPath,  StagingPath=res$StagingPath, UpperDepth_m= res$UpperDepth_m, LowerDepth_m=res$LowerDepth_m, Units=res$Units)
   }else{
     odf <- res
   }

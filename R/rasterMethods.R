@@ -33,7 +33,7 @@ drillRasters <- function(Products, Longitude, Latitude, Verbose=T){
     print(paste0('Drilling raster ', i, ' of ', nrow(Products)))
     rec <- Products[i,]
     #if(!http_error(rec$COGsPath)){
-    rl <- terra::rast(paste0('/vsicurl/',rec$COGsPath))
+    rl <- terra::rast(paste0('/vsicurl/',rec$StagingPath))
     val <- terra::extract(rl, pt)
     v = as.numeric(val[1,1])
     if(Verbose){
