@@ -71,16 +71,16 @@ codeDemoCOGs <- function(){
 
 
   cat(crayon::blue("\n\nWe will now demonstrate how to access and use some terra functions with COGs \n"))
-  cat(crayon::green("\nLets start by grabbing a COGs URL using - prods <- getProductMetaData(Detail = 'Low',  Attribute='Parent_Material', Resolution = '90m')\n\n"))
+  cat(crayon::green("\nLets start by grabbing a COGs URL using - prods <- getProductMetaData(Detail = 'Low',  Attribute='Clay', Resolution = '90m', Version = 2, Component = 'Modelled-Value)\n\n"))
 
   invisible(readline(prompt="Press [enter] to get the URL"))
-  rsp <- getProductMetaData(Detail = 'Low',  Attribute='Parent_Material', Resolution = '90m')
-rsp2 <- rsp[1:5,]
+  rsp <- getProductMetaData(Detail = 'Low',  Attribute='Clay', Resolution = '90m', Version = 2, Component = 'Modelled-Value')
+  rsp2 <- rsp[1:6,]
   print(rsp2)
 
   cat(crayon::green('\n\nNow lets load the raster data (5.3Gb) set using - cogLoad("https://esoil.io/TERNLandscapes/Public/Products/TERN/Covariates/Mosaics/90m/Veg_Landsat8Bare2.tif")\n\n'))
   invisible(readline(prompt="Press [enter] to load the raster data"))
-  r <- cogLoad('https://esoil.io/TERNLandscapes/Public/Products/TERN/Covariates/Mosaics/90m/Veg_Landsat8Bare2.tif')
+  r <- cogLoad(rsp2$StagingPath[1])
   print(r)
 
   cat(crayon::green('\n\nOK we have our raster, lets have a look at it - plot(r)\n\n'))
@@ -115,13 +115,13 @@ rsp2 <- rsp[1:5,]
    vals <- terra::extract(stk, pts)
    print(vals)
 
-   cat(crayon::green('\n\nor we could do the same thing using the drillRasters() function in this package\n'))
-   cat(crayon::green("\n\nprods <- getProductMetaData(Detail = 'Low',  Attribute='Parent_Material', Resolution = '90m') \n"))
-   cat(crayon::green("drillRasters(Products = prods[1:3,], Longitude = 151, Latitude = -26, Verbose = FALSE) \n"))
+   cat(crayon::green('\n\nor we could do the same thing using the drillRaster() function in this package\n'))
+   cat(crayon::green("\n\nprods <- getProductMetaData(Detail = 'High',  Attribute='Sand', Resolution = '90m') \n"))
+   cat(crayon::green("drillRaster(Path = prods$StagingPath[1], Longitude = 151, Latitude = -26) \n"))
 
    invisible(readline(prompt="Press [enter] to extract pixel values using the drillRasters() function"))
-   prods <- getProductMetaData(Detail = 'Low',  Attribute='Parent_Material', Resolution = '90m')
-   vals <- drillRasters(Products = prods[1:3,], Longitude = 151, Latitude = -26, Verbose = FALSE)
+   prods <- getProductMetaData(Detail = 'Low',  Attribute='Sand', Resolution = '90m')
+   vals <- drillRaster(COGPath = prods$StagingPath[1], Longitude = 151, Latitude = -26)
    print(vals)
 
    cat(crayon::green('\n\nOK.... Thats it. Enjoy using your COGs '))

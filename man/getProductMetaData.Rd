@@ -12,7 +12,9 @@ getProductMetaData(
   Attribute = NULL,
   Component = NULL,
   Name = NULL,
-  Resolution = NULL
+  Resolution = NULL,
+  Version = NULL,
+  isCurrentVersion = NULL
 )
 }
 \arguments{
@@ -31,6 +33,10 @@ getProductMetaData(
 \item{Name}{Filter by the data set name.}
 
 \item{Resolution}{Filter by spatial resolution ('90m' or '30m').}
+
+\item{Version}{Filter by version number (current options are 1 or 2).}
+
+\item{isCurrentVersion}{return only the latest version of a product (1 for True and 0 for False).}
 }
 \value{
 data.frame

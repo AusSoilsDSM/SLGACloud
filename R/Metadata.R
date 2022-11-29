@@ -14,7 +14,7 @@
 #' @export
 
 getParameterValues <- function(Parameter='Name'){
-  res <- jsonlite::fromJSON(utils::URLencode(paste0('https://esoil.io/TERNLandscapes/RasterProductsAPI/QueryParameterValues?format=json&parameter=',Parameter)))
+  res <- jsonlite::fromJSON(utils::URLencode(paste0(apiRoot, '/QueryParameterValues?format=json&parameter=',Parameter)))
   return(res)
 }
 
@@ -34,6 +34,8 @@ getParameterValues <- function(Parameter='Name'){
 #' @param Component Filter by Component (' Modelled-Value', 'Lower-CI', 'Upper-CI', 'Value').
 #' @param Resolution Filter by spatial resolution ('90m' or '30m').
 #' @param Name Filter by the data set name.
+#' @param Version Filter by version number (current options are 1 or 2).
+#' @param isCurrentVersion  return only the latest version of a product (1 for True and 0 for False).
 #' @examples getProductMetaData(Detail = 'High', Product='SLGA', Attribute='Available Water Capacity')
 
 #' @details The datastore can be queried to return filtered lists of metadata. The allowable values for filtering can be accessed using the getParameterValues() function
@@ -41,7 +43,7 @@ getParameterValues <- function(Parameter='Name'){
 #' @return data.frame
 #' @export
 
-getProductMetaData <- function(Detail='High', Product=NULL, DataType=NULL, Source=NULL, Attribute=NULL,	Component=NULL, Name=NULL, Resolution=NULL){
+getProductMetaData <- function(Detail='High', Product=NULL, DataType=NULL, Source=NULL, Attribute=NULL,	Component=NULL, Name=NULL, Resolution=NULL, Version=NULL, isCurrentVersion=NULL){
 
   p <- ''
   if(!is.null(Product)){p <- paste0(p, '&product=',Product)}
@@ -51,7 +53,10 @@ getProductMetaData <- function(Detail='High', Product=NULL, DataType=NULL, Sourc
   if(!is.null(Component)){p <- paste0(p, '&component=',Component)}
   if(!is.null(Name)){p <- paste0(p, '&name=',Name)}
   if(!is.null(Resolution)){p <- paste0(p, '&resolution=',Resolution)}
-  url <- utils::URLencode(paste0('https://esoil.io/TERNLandscapes/RasterProductsAPI/ProductInfo?format=json', p))
+  if(!is.null(Version)){p <- paste0(p, '&version=',Version)}
+  if(!is.null(isCurrentVersion)){p <- paste0(p, '&isCurrentVersion=',isCurrentVersion)}
+
+  url <- utils::URLencode(paste0(apiRoot, '/ProductInfo?format=json', p))
 
   res <- jsonlite::fromJSON(url)
 
