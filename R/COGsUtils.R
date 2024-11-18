@@ -37,7 +37,7 @@ cogDownload <- function(url=NULL, dest='', quiet = FALSE){
 
 # cogPreview
 #
-#' Download a COG file
+#' Preview a list of COG files
 #' @description Iterate through a list of Cloud Optimised Geotiff URLs and plot them.
 #' @param urls List of Cloud Optimised Geotiff URLs
 #' @param delay Delay in seconds between drawing plots. Minimum = 3 seconds
@@ -56,14 +56,34 @@ cogPreview <- function(urls=NULL, delay=3){
   for (i in 1:length(urls)) {
     n=stringr::str_remove(basename(urls[i]), '.tif')
     print(paste0('Plotting ', i, ' of ', length(urls), ' - ', n))
-    r <- terra::rast(paste0('/vsicurl/', urls[i]))
-    terra::plot(r, main=n)
+    # r <- terra::rast(paste0('/vsicurl/', urls[i]))
+    # terra::plot(r, main=n)
+    url <- paste0('/vsicurl/', urls[i])
+    rs = stars::read_stars(url, proxy = TRUE)
+    plot(rs, downsample = 30, col=rainbow(10))
     Sys.sleep(dly)
   }
   print('Done')
 }
 
 
+# cogPlot
+#
+#' Plot COG files
+#' @description Plot a single Cloud Optimised Geotiff.
+#' @param url URL of the Cloud Optimised Geotiff.
+#' @return plot
+#' @examples cogPlot(url)
+#' @details A method for quickly viewing a COG.
+#' @author Ross Searle
+#' @export
+
+cogPlot <- function(url){
+  n=stringr::str_remove(basename(url), '.tif')
+  url <- paste0('/vsicurl/', url)
+  rs = stars::read_stars(url, proxy = TRUE)
+  plot(rs, downsample = 30, col=rainbow(10), main=n)
+}
 
 
 pingDataStore <- function() {

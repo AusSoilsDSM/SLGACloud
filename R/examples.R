@@ -83,11 +83,16 @@ codeDemoCOGs <- function(){
   r <- cogLoad(rsp2$StagingPath[1])
   print(r)
 
-  cat(crayon::green('\n\nOK we have our raster, lets have a look at it - plot(r)\n\n'))
-  cat(crayon::green('If you see some error messages after this just ignore - there not actual errors;\n\n'))
+  cat(crayon::green('\n\nOK we have our raster, lets have a look at it - cogPlot(url)\n\n'))
+  cat(crayon::green('This function uses the "stars" package to downsample the COG on the fly for local plotting;\n\n'))
   invisible(readline(prompt="Press [enter] to plot the raster"))
 
-  o <- try(terra::plot(r), silent=TRUE)
+   url <- paste0(rsp2$StagingPath[1])
+   cogPlot(url)
+   # rs = stars::read_stars(url, proxy = TRUE)
+   # plot(rs, downsample = 30, col=rainbow(10),  main='This is a 40800 x 49200 pixel raster')
+
+ # o <- try(terra::plot(r), silent=TRUE)
 
    cat(crayon::green('\n\nCool, now lets clip out a smaller subset area and plot it using\n'))
    cat(crayon::green('\ne <- ext(145, 146, -25,-24)\n'))

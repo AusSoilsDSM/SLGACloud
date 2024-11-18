@@ -2,7 +2,7 @@
 % Please edit documentation in R/COGsUtils.R
 \name{cogPreview}
 \alias{cogPreview}
-\title{Download a COG file}
+\title{Preview a list of COG files}
 \usage{
 cogPreview(urls = NULL, delay = 3)
 }
