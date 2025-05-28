@@ -1,19 +1,49 @@
 # SLGACloud
 
-The SLGACloud package is an R package. It doesn't do that much really.  
-It is essentially just meant to ease access to the Soil and Landscape Grid of Australia (SLGA) Cloud Optimised GeoTIFF (COG) DataStore URLs while you are working in R, without having to jump out to the website all the time to copy the required COGs URLs.  
+SLGACloud is an R package to simplify access to the Soil and Landscape Grid of Australia (SLGA) Cloud Optimised GeoTIFF (COG) DataStore URLs directly within R. It provides helper functions for retrieving COG URLs, working with `terra`, and navigating relevant SLGA web resources.
 
-It also has some functions for utilising the COGs in the 'terra' package and for accessing relevant SLGA websites.
+## Installation
 
-It is still very much developmental and may or may not continue to exist
+```r
+# install remotes if needed
+install.packages("remotes")
 
-To install the package in R  
-  
-library(devtools)  
-install_github("AusSoilsDSM/SLGACloud")
+# install SLGACloud from GitHub
+remotes::install_github("AusSoilsDSM/SLGACloud")
+```
 
-when it is installed you can take a quick preview of the functionality using
+## Usage
 
+```r
+library(SLGACloud)
+
+# List available COG URLs
+listCOGs()
+
+# Preview package functionality
 codeDemo()
 
+# Demonstrate direct COG downloads and plotting
 codeDemoCOGs()
+```
+
+## Functions
+
+- `listCOGs()`: Retrieve a named list of available SLGA COG URLs.
+- `getCOG(name)`: Get the download URL for a specific SLGA layer.
+- `plotCOG(name)`: Download and plot a SLGA COG layer using `terra`.
+- `codeDemo()`: Run a quick demo of basic package functions.
+- `codeDemoCOGs()`: Showcase COG-specific workflows.
+
+## Development Status
+
+> ⚠️ **Alpha** — API and functionality may change. Use with caution in production settings.
+
+## Contributing
+
+Bug reports and feature requests welcome via GitHub issues. Pull requests encouraged.
+
+## License
+
+MIT License. See [LICENSE](LICENSE) for details.
+
