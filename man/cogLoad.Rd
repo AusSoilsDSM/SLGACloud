@@ -16,7 +16,9 @@ SpatRaster
 Uses the 'terra' rast() function and prepends the '/vsicurl/' bit to save you doing it manually
 }
 \examples{
+\dontrun{
 cogLoad('https://esoil.io/TERNLandscapes/Public/Products/TERN/Covariates/Mosaics/90m/Veg_Landsat8Bare2.tif')
+}
 }
 \author{
 Ross Searle

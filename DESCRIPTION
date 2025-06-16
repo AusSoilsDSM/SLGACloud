@@ -5,7 +5,7 @@ Version: 1.0.1
 Author: Ross Searle
 Maintainer: Ross Searle <ross.searle@csiro.au>
 Description: Utilities to help ease the access to the data products of Soil and Landscape Grid of Australia (SLGA) Cloud Optimised Geofiff (COG) data store.    This is really just a proof of concept at this stage. Information about the SLGA can be found at https://esoil.io/TERNLandscapes/Public/Pages/SLGA/index.html
-License: GPL
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2

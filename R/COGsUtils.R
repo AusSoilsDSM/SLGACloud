@@ -6,7 +6,9 @@
 #' @return SpatRaster
 #' @author Ross Searle
 #' @examples
+#' \dontrun{
 #' cogLoad('https://esoil.io/TERNLandscapes/Public/Products/TERN/Covariates/Mosaics/90m/Veg_Landsat8Bare2.tif')
+#' }
 #' @export
 
 cogLoad <- function(url=NULL){
@@ -26,7 +28,9 @@ cogLoad <- function(url=NULL){
 #' @return Cloud Optimised Geotiff
 #' @author Ross Searle
 #' @examples
+#' \dontrun{
 #' cogDownload(url = 'https://esoil.io/TERNLandscapes/Public/Products/TERN/Covariates/Mosaics/90m/Veg_Landsat8Bare2.tif', dest='c:/temp/demoCOG.tif')
+#' }
 #' @export
 
 cogDownload <- function(url=NULL, dest='', quiet = FALSE){
@@ -42,14 +46,16 @@ cogDownload <- function(url=NULL, dest='', quiet = FALSE){
 #' @param urls List of Cloud Optimised Geotiff URLs
 #' @param delay Delay in seconds between drawing plots. Minimum = 3 seconds
 #' @return plot
-#' @examples cogs <- getProductMetaData(Detail = 'Low',  Attribute='Parent_Material', Resolution = '90m')
+#' @examples
+#' \dontrun{
+#' cogs <- getProductMetaData(Detail = 'Low',  Attribute='Parent_Material', Resolution = '90m')
 #' cogPreview(urls = cogs$COGsPath[1:6],  delay = 5)
-
-
+#' }
 #' @details A method for quickly viewing data products.
 #' @author Ross Searle
 #' @export
-
+#' @importFrom grDevices rainbow
+#'
 cogPreview <- function(urls=NULL, delay=3){
 
   dly <- max(3, delay)
@@ -73,10 +79,14 @@ cogPreview <- function(urls=NULL, delay=3){
 #' @description Plot a single Cloud Optimised Geotiff.
 #' @param url URL of the Cloud Optimised Geotiff.
 #' @return plot
-#' @examples cogPlot(url)
+#' @examples
+#' \dontrun{
+#' cogPlot(url)
+#' }
 #' @details A method for quickly viewing a COG.
 #' @author Ross Searle
 #' @export
+#' @importFrom grDevices rainbow
 
 cogPlot <- function(url){
   n=stringr::str_remove(basename(url), '.tif')

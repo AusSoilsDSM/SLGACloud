@@ -8,14 +8,15 @@
 #' @param Latitude Latitude value - needs to be with Australia
 # #' @param Verbose return all metadata or just the name and value
 #' @return data.frame
-#' @examples rasters <- getProductMetaData(Detail = 'High', Attribute = 'Sand', Component = 'Modelled-Value',  isCurrentVersion = 1 )
+#' @examples
+#' \dontrun{
+#' rasters <- getProductMetaData(Detail = 'High', Attribute = 'Sand', Component = 'Modelled-Value',  isCurrentVersion = 1 )
 #'
 #' for(i in 1:nrow(l)){
 #'   v <- drillRaster(rasters$StagingPath[i], Longitude, Latitude)
 #'   print(v)
 #' }
-
-
+#' }
 #' @details Drill the Cloud Optimised GeoTIFF rasters in the SLGA data store at a given location and return values for that location.
 #' You need to use the "StagingPath" returned from the getProductMetaData() function as the "Path" variable in this function
 #' @author Ross Searle

@@ -20,7 +20,9 @@ Cloud Optimised Geotiff
 Download an entire COG Geotiff file to your local machine
 }
 \examples{
+\dontrun{
 cogDownload(url = 'https://esoil.io/TERNLandscapes/Public/Products/TERN/Covariates/Mosaics/90m/Veg_Landsat8Bare2.tif', dest='c:/temp/demoCOG.tif')
+}
 }
 \author{
 Ross Searle

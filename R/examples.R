@@ -5,6 +5,8 @@
 #' @description Run through a quick demonstration of the SLGACloud functions for accessing the SLGA COGs Datastore URLs
 
 #' @author Ross Searle
+#' @importFrom grDevices rainbow
+#' @importFrom utils install.packages
 #' @export
 
 

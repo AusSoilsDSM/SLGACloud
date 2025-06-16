@@ -24,11 +24,13 @@ Drill the Cloud Optimised GeoTIFF rasters in the SLGA data store at a given loca
 You need to use the "StagingPath" returned from the getProductMetaData() function as the "Path" variable in this function
 }
 \examples{
+\dontrun{
 rasters <- getProductMetaData(Detail = 'High', Attribute = 'Sand', Component = 'Modelled-Value',  isCurrentVersion = 1 )
 
 for(i in 1:nrow(l)){
   v <- drillRaster(rasters$StagingPath[i], Longitude, Latitude)
   print(v)
+}
 }
 }
 \author{

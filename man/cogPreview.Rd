@@ -21,8 +21,10 @@ Iterate through a list of Cloud Optimised Geotiff URLs and plot them.
 A method for quickly viewing data products.
 }
 \examples{
+\dontrun{
 cogs <- getProductMetaData(Detail = 'Low',  Attribute='Parent_Material', Resolution = '90m')
 cogPreview(urls = cogs$COGsPath[1:6],  delay = 5)
+}
 }
 \author{
 Ross Searle

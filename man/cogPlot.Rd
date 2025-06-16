@@ -19,7 +19,9 @@ Plot a single Cloud Optimised Geotiff.
 A method for quickly viewing a COG.
 }
 \examples{
+\dontrun{
 cogPlot(url)
+}
 }
 \author{
 Ross Searle
