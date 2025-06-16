@@ -64,13 +64,10 @@ codeDemoCOGs <- function(){
   cat(crayon::blue("\n\n######################################  Code Demo ############################################\n"))
   cat(crayon::blue("\n\nTo utilise COGs effectively you will need to install the R 'terra' package (the 'raster' package replacement.\n"))
 
-  t <- require('terra')
-
-  if(!t){
-    cat(crayon::blue("\n\nIt looks like the 'terra' package is not installed. Lets try and install it now\n"))
-    install.packages('terra')
-    }
-
+  if (!requireNamespace("terra", quietly = TRUE)) {
+    cat(crayon::blue("\n\nIt looks like the 'terra' package is not installed. Let's try and install it now\n"))
+    install.packages("terra")
+  }
 
   cat(crayon::blue("\n\nWe will now demonstrate how to access and use some terra functions with COGs \n"))
   cat(crayon::green("\nLets start by grabbing a COGs URL using - prods <- getProductMetaData(Detail = 'Low',  Attribute='Clay', Resolution = '90m', Version = 2, Component = 'Modelled-Value)\n\n"))
@@ -92,7 +89,7 @@ codeDemoCOGs <- function(){
    url <- paste0(rsp2$StagingPath[1])
    cogPlot(url)
    # rs = stars::read_stars(url, proxy = TRUE)
-   # plot(rs, downsample = 30, col=rainbow(10),  main='This is a 40800 x 49200 pixel raster')
+   # terra::plot(rs, downsample = 30, col=rainbow(10),  main='This is a 40800 x 49200 pixel raster')
 
  # o <- try(terra::plot(r), silent=TRUE)
 

@@ -66,7 +66,7 @@ cogPreview <- function(urls=NULL, delay=3){
     # terra::plot(r, main=n)
     url <- paste0('/vsicurl/', urls[i])
     rs = stars::read_stars(url, proxy = TRUE)
-    plot(rs, downsample = 30, col=rainbow(10))
+    terra::plot(rs, downsample = 30, col=rainbow(10))
     Sys.sleep(dly)
   }
   print('Done')
@@ -92,7 +92,7 @@ cogPlot <- function(url){
   n=stringr::str_remove(basename(url), '.tif')
   url <- paste0('/vsicurl/', url)
   rs = stars::read_stars(url, proxy = TRUE)
-  plot(rs, downsample = 30, col=rainbow(10), main=n)
+  terra::plot(rs, downsample = 30, col=rainbow(10), main=n)
 }
 
 

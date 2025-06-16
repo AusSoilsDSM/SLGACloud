@@ -1,3 +1,5 @@
+[![pkg-test](https://github.com/AusSoilsDSM/SLGACloud/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AusSoilsDSM/SLGACloud/actions/workflows/R-CMD-check.yaml)
+
 # SLGACloud
 
 SLGACloud is an R package to simplify access to the Soil and Landscape Grid of Australia (SLGA) Cloud Optimised GeoTIFF (COG) DataStore URLs directly within R. It provides helper functions for retrieving COG URLs, working with `terra`, and navigating relevant SLGA web resources.
