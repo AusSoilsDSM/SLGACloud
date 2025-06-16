@@ -17,7 +17,6 @@
 #'
 #' @examples
 #' \dontrun{
-#' library(terra)
 #'
 #' clay_urls <- c(
 #'   '/vsicurl/https://esoil.io/TERNLandscapes/Public/Products/TERN/SLGA/CLY/CLY_000_005_EV_N_P_AU_TRN_N_20210902.tif',
@@ -29,7 +28,7 @@
 #' )
 #'
 #' clay_stack <- terra::rast(clay_urls)
-#' aoi <- ext(149.00, 149.10, -36.00, -35.90)
+#' aoi <- terra::ext(149.00, 149.10, -36.00, -35.90)
 #' clay_crop <- terra::crop(clay_stack, aoi)
 #'
 #' out <- ea_rasSp_fast(
@@ -40,7 +39,7 @@
 #'   depth_res = 2
 #' )
 #'
-#' plot(out)
+#' terra::plot(out)
 #' }
 #'
 #' @keywords methods

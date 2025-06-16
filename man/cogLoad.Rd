@@ -13,7 +13,7 @@ cogLoad(url = NULL)
 SpatRaster
 }
 \description{
-Uses the 'terra' rast() function and prepends the '/vsicurl/' bit to save you doing it manually
+Uses the 'terra::rast' function and prepends the '/vsicurl/' bit to save you doing it manually
 }
 \examples{
 \dontrun{

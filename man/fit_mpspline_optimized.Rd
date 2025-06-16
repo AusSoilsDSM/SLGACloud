@@ -27,7 +27,6 @@ Applies the mass-preserving spline algorithm to a numeric vector of soil profile
 }
 \examples{
 \dontrun{
-library(terra)
 
 clay_urls <- c(
   '/vsicurl/https://esoil.io/TERNLandscapes/Public/Products/TERN/SLGA/CLY/CLY_000_005_EV_N_P_AU_TRN_N_20210902.tif',

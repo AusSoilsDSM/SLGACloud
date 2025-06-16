@@ -1,7 +1,7 @@
 # loadcog
 #
 #' Load a raster dataset from a COG URL
-#' @description Uses the 'terra' rast() function and prepends the '/vsicurl/' bit to save you doing it manually
+#' @description Uses the 'terra::rast' function and prepends the '/vsicurl/' bit to save you doing it manually
 #' @param url Web location of the Cloud Optimised Geotiff
 #' @return SpatRaster
 #' @author Ross Searle
